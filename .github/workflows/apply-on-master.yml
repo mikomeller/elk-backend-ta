@@ -14,7 +14,7 @@ jobs:
           role-to-assume: arn:aws:iam::183345771765:role/github-actions-oidc
             # aws-access-key: ${{secrets.AWS_ACCESS_KEY}}
             # aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-            aws-region: "eu-central-1"
+          aws-region: "eu-central-1"
 
       - name: Clone/Checkout your repository code
         uses: actions/checkout@v2
