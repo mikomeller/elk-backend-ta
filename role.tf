@@ -1,8 +1,6 @@
 resource "aws_iam_openid_connect_provider" "default" {
   url = "https://token.actions.githubusercontent.com"
-  client_id_list = [
-    "sts.amazonaws.com",
-  ]
+  client_id_list = ["sts.amazonaws.com"]
   thumbprint_list = ["6938fd4d98bab03faadb97b34396831e3780aea1"]
 }
 
@@ -22,11 +20,11 @@ data "aws_iam_policy_document" "github_assume_role_policy" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values = ["repo:rajsandhu/group-2-Backend:*:*",
-        "repo:rajsandhu/group-2-Network:*:*",
-        "repo:rajsandhu/group-2-App-Infra:*:*",
-        "repo:rajsandhu/group-2-App-Config:*:*",
-        "repo:rajsandhu/group-2-Kibana-AMI:*:*",
+      values = ["repo:mikomeller/elk-backend-ta:*:*",
+        "repo:mikomeller/elk-network-ta:*:*",
+        "repo:mikomeller/elk-app-infra-ta:*:*",
+        "repo:mikomeller/elk-app-config-ta:*:*",
+        "repo:mikomeller/elk-kibana-ami-ta:*:*",
       ]
     }
   }
